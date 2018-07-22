@@ -1,5 +1,16 @@
 import sys, tempfile, os, datetime
 from subprocess import call
+from argparse import ArgumentParser
+
+
+def parsed_args(args):
+    parser =  ArgumentParser(description="")
+    parser = ArgumentParser(description="")
+    parser.add_argument("-i", "--init", help="Creates a file")
+    parser.add_argument("-fd", "--find-date",  help="Find all entries at a specific date")
+    parser.add_argument("-w", "--write", help="Write a new entry", action="store_true")
+
+    return parser.parse_args(args)
 
 #Main append funtion to edit the .scroll file
 def write():

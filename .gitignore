@@ -1,3 +1,6 @@
 escroll.egg-info
 notes.txt
 escroll/__pycache__/
+__pycache__
+.pytest_cache
+*.pyc

@@ -1,15 +1,11 @@
-
-from .util import write
+from .util import write, parsed_args
+import sys
 
 from argparse import ArgumentParser
 
 def main():
-    parser = ArgumentParser(description="")
-    parser.add_argument("-i", "--init", help="Creates a file")
-    parser.add_argument("-fd", "--find-date",  help="Find all entries at a specific date")
-    parser.add_argument("-w", "--write", help="Write a new entry", action="store_true")
-
-    args = parser.parse_args()
+    
+    args = parsed_args(sys.argv[1:])
 
     if args.init:
         scroll_file = open("{}.scroll".format(args.init), "w+")
@@ -17,10 +13,6 @@ def main():
     elif args.write:
         write()
 
-    ''' Vim code '''
-    '''
-    
-    '''
 
 
 if __name__ == '__main__':
